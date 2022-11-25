@@ -25,23 +25,6 @@ class AdminProductController extends Controller
         ]);
     }
 
-    // Recebe requisição para dar update PUT
-    public function update(Product $product, ProductStoreRequest $request)
-    {
-        $input = $request->validated();
-
-        if (!empty($input['cover']) && $input['cover']->isValid()) {
-            Storage::delete($product->cover ?? '');
-            $file = $input['cover'];
-            $path = $file->store('products');
-            $input['cover'] = $path;
-        }
-
-        $product->fill($input);
-        $product->save();
-        return Redirect::route('admin.products');
-    }
-
     // Mostrar página de criar
     public function create()
     {
@@ -61,6 +44,23 @@ class AdminProductController extends Controller
         }
         Product::create($input);
 
+        return Redirect::route('admin.products');
+    }
+
+     // Recebe requisição para dar update PUT
+    public function update(Product $product, ProductStoreRequest $request)
+    {
+        $input = $request->validated();
+ 
+        if (!empty($input['cover']) && $input['cover']->isValid()) {
+             Storage::delete($product->cover ?? '');
+             $file = $input['cover'];
+             $path = $file->store('products');
+             $input['cover'] = $path;
+        }
+ 
+        $product->fill($input);
+        $product->save();
         return Redirect::route('admin.products');
     }
 

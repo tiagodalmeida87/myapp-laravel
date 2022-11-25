@@ -15,6 +15,8 @@ class HomeController extends Controller
 
         $products->when($request->search, function ($query, $vl) {
             $query->where('name', 'like', '%' . $vl . '%');
+                    // ->orWhere('price', 'like', '%' . $vl . '%');
+                    // ->orWhere('description', 'like', '%' . $vl . '%');
             // dd($vl);
         });
 
