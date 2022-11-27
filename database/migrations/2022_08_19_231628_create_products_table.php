@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->string('cover')->nullable();
-            $table->decimal('price')->default('0.00');
+            $table->decimal('price', 10, 2)->default('0.00');
             $table->text('description')->nullable();
             $table->integer('stock')->default(0);
             $table->timestamps();
