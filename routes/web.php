@@ -38,7 +38,7 @@ Route::delete('/admin/clients/{client}', [ClientController::class, 'destroy'])->
 //Route Admin
 Route::get('/admin/products', [AdminProductController::class, 'index'])->name('admin.products');
 
-
+//Route Product
 Route::get('/admin/products/create', [AdminProductController::class, 'create'])->name('admin.product.create');
 Route::get('/admin/products/order', [AdminProductController::class, 'create'])->name('admin.product.order');
 Route::post('/admin/products', [AdminProductController::class, 'store'])->name('admin.product.store');

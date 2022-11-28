@@ -30,6 +30,7 @@
                     </thead>
                     <tbody class="divide-y">
                         @foreach ($products as $product)
+                        {{-- <pre>{{var_dump($loop)}}</pre> --}}
                             <tr @if ($loop->even) class="bg-gray-100" @endif>
                                 <td class="px-4 py-3">{{ $product->id }}</td>
                                 <td class="px-4 py-3">

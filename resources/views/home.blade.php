@@ -33,7 +33,7 @@
                             <h2 class="text-gray-900 title-font text-lg font-medium">{{ $product->name }}</h2>
                             <p class="mt-1">{{ $product->price }}</p>
                         </div>
-                        <a href="{{ route('product', $product->slug) }}""
+                        <a href="{{ route('product', $product->slug) }}"
                             class="mt-3 text-indigo-500 inline-flex items-center">Ver mais
                             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">

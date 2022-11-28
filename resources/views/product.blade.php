@@ -11,9 +11,7 @@
                     <p class="leading-relaxed">{{ $product->description }}</p>
                     @if ($product->stock)
                         <div class="my-3">
-                            <span
-                                class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">Em
-                                estoque</span>
+                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">Em estoque</span>
                         </div>
                     @endif
                     <div class="flex border-t-2 border-gray-100 mt-6 pt-6">

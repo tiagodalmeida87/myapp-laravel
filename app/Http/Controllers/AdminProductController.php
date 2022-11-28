@@ -19,7 +19,6 @@ class AdminProductController extends Controller
     // Mostrar a página de editar
     public function edit(Product $product)
     {
-
         return view('admin.product_edit', [
             'product' => $product
         ]);
@@ -42,12 +41,13 @@ class AdminProductController extends Controller
             $path = $file->store('products');
             $input['cover'] = $path;
         }
+
         Product::create($input);
 
         return Redirect::route('admin.products');
     }
 
-     // Recebe requisição para dar update PUT
+    // Recebe requisição para dar update PUT
     public function update(Product $product, ProductStoreRequest $request)
     {
         $input = $request->validated();
