@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProductStoreRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -35,6 +36,17 @@ class AdminProductController extends Controller
     {
         $input = $request->validated();
         $input['slug'] = Str::slug($input['name']);
+
+        // if($request->hasFile('cover') && $request->file('cover')->isValid()) {
+        //     $extension = $request->file->getClientOriginalExtension();
+        //     $filename = $request->file->getClientOriginalName();
+
+        //     Storage::disk('public')->put($filename, File ::get($request->file));
+        //     asset('storage/'.$request->file->getClientOriginalName());
+        //     $request->merge(["cover" => $filename]);
+        // }
+
+
 
         if (!empty($input['cover']) && $input['cover']->isValid()) {
             $file = $input['cover'];

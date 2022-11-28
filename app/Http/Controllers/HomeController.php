@@ -29,6 +29,7 @@ class HomeController extends Controller
         // $products->where();
 
         $products = $products->get();
+        // $products = $products->paginate();
 
         //dd($request->search);
         return view('home', [
